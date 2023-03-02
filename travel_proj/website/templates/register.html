@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body style="text-align:center;background-size:100;background-color:#C0C0C0;font-size:20px">
+<h2>Registration</h2>
+<form action="register" method="post">
+    {% csrf_token %}
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Enter username"><br><br>
+
+    <label>Firstname</label>
+    <input type="text" name="first_name" placeholder="Enter first_name"><br><br>
+
+    <label>Lastname</label>
+    <input type="text" name="last_name" placeholder="Enter last_name"><br><br>
+
+    <label>Email</label>
+    <input type="email" name="email" placeholder="Enter your mail id"><br><br>
+
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Enter password"><br><br>
+
+    <label>Confirm Password</label>
+    <input type="password" name="password1" placeholder="Enter password again"><br><br>
+
+    <input type="Submit">
+
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
